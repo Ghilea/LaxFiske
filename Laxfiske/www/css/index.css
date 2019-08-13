@@ -1,0 +1,1073 @@
+/***************************/
+/* reset css structure     */
+/***************************/
+*, a, abbr, acronym, address, applet, article, aside, audio, b, blockquote, big, body, center, canvas, caption, cite, code, command, datalist, dd, del, details, dfn, dl, div, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, keygen, label, legend, li, meter, nav, object, ol, output, p, pre, progress, q, s, samp, section, small, span, source, strike, strong, sub, sup, table, tbody, tfoot, thead, th, tr, tdvideo, tt, u, ul, var, br {
+    border: none;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    vertical-align: baseline;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+    /***************************/
+    /* base css structure      */
+    /***************************/
+    *, *:before, *:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+a {
+    outline: 0;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+table, table td {
+    padding: 0;
+    border: none;
+    border-collapse: collapse;
+}
+
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {
+    display: block;
+}
+
+mark, rp, rt, ruby, summary, time {
+    display: inline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-weight: normal;
+    line-height: 1.75em;
+}
+
+em, i {
+    font-style: italic;
+}
+
+section, article {
+    margin: 2em 0 2em 0;
+}
+
+    section:last-child, article:last-child {
+        margin-bottom: 0;
+    }
+
+input, textarea {
+    text-align: left;
+    font-size: 120%;
+    font-weight: 400;
+    color: rgb(51,42,29);
+    resize: none;
+    width: 100%;
+    height: auto;
+    line-height: 1.2em;
+    overflow: hidden;
+    margin: 0 5px 5px 0;
+    padding: 5px;
+}
+
+    input:focus, textarea:focus {
+        outline: 0 solid transparent;
+    }
+
+option[value=""][disabled] {
+    display: none;
+}
+
+html, body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    -ms-text-size-adjust: auto;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    color: rgb(0,0,0);
+    font-weight: 400;
+    line-height: 1.85em;
+    font-size: 0.95em;
+    font-family: 'KoHo', sans-serif;
+    position: relative;
+}
+
+/***************************/
+/* menu                    */
+/***************************/
+#menuContainer {
+    position: fixed;
+    right: 1em;
+    top: 0.5em;
+}
+
+    #menuContainer:hover {
+        cursor: pointer;
+    }
+
+.bar1, .bar2, .bar3 {
+    width: 2em;
+    height: 0.2em;
+    background-color: rgb(255,255,255);
+    margin: 0.5em 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    -moz-transform: rotate(-45deg) translate(-9px, 6px);
+    -o-transform: rotate(-45deg) translate(-9px, 6px);
+    -ms-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-0.4em, 0.7em);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    width: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    -moz-transform: rotate(45deg) translate(-8px, -8px);
+    -o-transform: rotate(45deg) translate(-8px, -8px);
+    -ms-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-0.3em, -0.6em);
+}
+
+/***************************/
+/* accordion               */
+/***************************/
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .accordion:hover {
+        background-color: #ccc;
+    }
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.1s ease-out;
+}
+
+.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 0.4em;
+}
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* poll */
+#poll {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    bottom: 20%;
+    width: 20em;
+    height: auto;
+    margin: 0 0 0 -10em;
+    border-radius: 0.3em;
+    box-shadow: 0 0 50px 10px rgb(0,0,0);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.75);
+    transition: display 2s ease-in-out 0.1s;
+    text-shadow: 1px 1px rgb(0,0,0);
+}
+
+    #poll h1 {
+        font-size: 150%;
+        text-align: center;
+        color: rgb(255,255,255);
+    }
+
+/***************************/
+/* coupons                 */
+/***************************/
+#coupons {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 0.97;
+}
+
+    #coupons h1 {
+        font-family: 'Cinzel', serif;
+        font-weight: 800;
+        font-size: 130%;
+        text-align: center;
+        margin: 1.5em 1.5em 0 1.5em;
+        color: rgb(255, 255, 255);
+        letter-spacing: 0.05em;
+        padding: 0.3em;
+        border-bottom: solid 0.15em rgb(116, 162, 195);
+    }
+
+    #coupons h2 {
+        font-family: 'KoHo', sans-serif;
+        font-weight: 400;
+        font-size: 110%;
+        color: rgb(255,255,255);
+        letter-spacing: 0.05em;
+    }
+
+    #coupons p {
+        font-family: 'KoHo', sans-serif;
+        font-weight: 400;
+        font-size: 75%;
+        letter-spacing: 0.1em;
+        color: rgb(255,255,255);
+    }
+
+    #coupons .date {
+        letter-spacing: 0.3em;
+        color: rgb(0,0,0);
+        color: rgba(255,255,255,0.5);
+        font-size: 60%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+        #coupons .date span {
+            font-size: 130%;
+        }
+
+    #coupons .box {
+        background-color: rgb(116, 162, 195);
+        background-color: rgba(116, 162, 195,0.5);
+        border-radius: 0.3em;
+    }
+
+        #coupons .box img {
+            width: 100%;
+            height: auto;
+        }
+
+    #coupons .border {
+        border-left: 0.1em solid rgb(0,0,0);
+        border-left: 0.1em solid rgba(0,0,0,0.1);
+    }
+
+/***************************/
+/* quest box      		   */
+/***************************/
+.boxRead {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 50px 10px rgb(0,0,0);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.35);
+    color: rgb(255,255,255);
+    background: rgb(22, 117, 134);
+    background: rgba(22, 117, 134, 0.7);
+    border-top: 0.15em solid rgb(86, 170, 185);
+    border-top: 0.15em solid rgba(86, 170, 185, 0.75);
+    border-bottom: 0.15em solid rgb(86, 170, 185);
+    border-bottom: 0.15em solid rgba(86, 170, 185, 0.75);
+    border-radius:0.3em;
+}
+
+.boxRead p {
+    font-size: 85% !important;
+    font-weight: 400 !important;
+}
+
+.boxButton {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 50px 10px rgb(0,0,0);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.35);
+    color: rgb(255,255,255);
+    background: rgb(22, 117, 134);
+    background: rgba(22, 117, 134, 0.7);
+    border-left: 0.15em solid rgb(86, 170, 185);
+    border-left: 0.15em solid rgba(86, 170, 185, 0.75);
+    border-right: 0.15em solid rgb(86, 170, 185);
+    border-right: 0.15em solid rgba(86, 170, 185, 0.75);
+    border-radius: 3em;
+}
+
+    .settingsh1 {
+        font-family: 'Cinzel', serif;
+        font-weight: 800;
+        font-size: 130%;
+        text-align: center;
+        margin: 1.5em 1.5em 0 1.5em;
+        color: rgb(255, 255, 255);
+        letter-spacing: 0.05em;
+        padding: 0.3em;
+        text-shadow: 1px 1px rgb(0,0,0);
+    }
+
+    .boxButton h3 {
+        font-weight: 600;
+        font-size: 85%;
+        letter-spacing: 0.1em;
+    }
+
+    .boxButton p {
+        font-weight: 400;
+        font-size: 85% !important;
+        letter-spacing: 0.1em;
+        text-shadow: 1px 1px rgb(0,0,0);
+    }
+
+    .boxButton .rightSideImg {
+        width: 10%;
+        height: auto;
+        opacity: 0.7;
+    }
+
+    .tutorialImg {
+        width: 4em !important;
+        height: auto;
+        float: left;
+        margin: 0.2em 0.7em 0 0 !important;
+    }
+
+    .boxButton img {
+        width: 16px;
+        height: auto;
+        float: left;
+        margin: 0.4em 0.7em 0 0;
+    }
+
+    .boxButton .subP {
+        font-size: 75%;
+        font-family: 'KoHo', sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+    }
+
+    version {
+        position: absolute;
+        right: 0.5em;
+        bottom: 0.1em;
+        color: rgb(255, 255, 255);
+        font-size: 55%;
+        letter-spacing: 0.2em;
+    }
+
+    .Inactive {
+        display:none;
+    
+    }
+
+    .Locked {
+        opacity: 0.3;
+    }
+
+/***************************/
+/* loading animation       */
+/***************************/
+#loader {
+    background-image: url(../images/bg-compressor.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#loader {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+}
+
+    #loader .waiting {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 4em;
+        height: 1em;
+        padding: 0.25em 0 0 0;
+        margin: -2.5em 0 0 -2em;
+        text-align: center;
+        color: rgb(255,255,255);
+        font-size: 400%;
+        background-color: red;
+        border-bottom-left-radius: 0.2em;
+        border-top-right-radius: 0.2em;
+        box-shadow: 0 0 10px rgb(0,0,0);
+        box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+
+    #loader .loaderText {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        width: 15em;
+        height: 2em;
+        margin: 3em 0 0 -7.5em;
+        text-align: center;
+        color: rgb(255,255,255);
+        text-shadow: 1px 1px rgb(0,0,0);
+    }
+
+.lds-roller {
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    display: inline-block;
+    margin: -32px 0 0 -32px;
+}
+
+    .lds-roller div {
+        animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        transform-origin: 32px 32px;
+    }
+
+        .lds-roller div:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: rgb(255,255,255);
+            margin: -3px 0 0 -3px;
+        }
+
+        .lds-roller div:nth-child(1) {
+            animation-delay: -0.036s;
+        }
+
+            .lds-roller div:nth-child(1):after {
+                top: 50px;
+                left: 50px;
+            }
+
+        .lds-roller div:nth-child(2) {
+            animation-delay: -0.072s;
+        }
+
+            .lds-roller div:nth-child(2):after {
+                top: 54px;
+                left: 45px;
+            }
+
+        .lds-roller div:nth-child(3) {
+            animation-delay: -0.108s;
+        }
+
+            .lds-roller div:nth-child(3):after {
+                top: 57px;
+                left: 39px;
+            }
+
+        .lds-roller div:nth-child(4) {
+            animation-delay: -0.144s;
+        }
+
+            .lds-roller div:nth-child(4):after {
+                top: 58px;
+                left: 32px;
+            }
+
+        .lds-roller div:nth-child(5) {
+            animation-delay: -0.18s;
+        }
+
+            .lds-roller div:nth-child(5):after {
+                top: 57px;
+                left: 25px;
+            }
+
+        .lds-roller div:nth-child(6) {
+            animation-delay: -0.216s;
+        }
+
+            .lds-roller div:nth-child(6):after {
+                top: 54px;
+                left: 19px;
+            }
+
+        .lds-roller div:nth-child(7) {
+            animation-delay: -0.252s;
+        }
+
+            .lds-roller div:nth-child(7):after {
+                top: 50px;
+                left: 14px;
+            }
+
+        .lds-roller div:nth-child(8) {
+            animation-delay: -0.288s;
+        }
+
+            .lds-roller div:nth-child(8):after {
+                top: 45px;
+                left: 10px;
+            }
+
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* The container */
+.container {
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    /* Hide the browser's default checkbox */
+    .container input {
+        opacity: 0;
+    }
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0.3em;
+    right: 0.3em;
+    height: 25px;
+    width: 25px;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgb(0,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.5);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.5);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/***************************/
+/* styles    			   */
+/***************************/
+#styleTop {
+    z-index: 2;
+    width: 100%;
+    height: 7em;
+    font-size: 75%;
+    font-weight: 600;
+}
+
+    #styleTop p {
+        font-family: 'KoHo', sans-serif;
+        text-align: center;
+        color: rgb(255,255,255);
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.8);
+        letter-spacing: 0.12em;
+        border-top: 0.1em solid rgb(255, 255, 255);
+        border-top: 0.1em solid rgba(255, 255, 255, 0.3);
+        border-bottom: 0.1em solid rgb(0, 0, 0);
+        border-bottom: 0.1em solid rgba(0, 0, 0, 0.3);
+        border-radius: 3em;
+        margin: 1em 0 0 0;
+        background-color: rgb(22, 117, 134);
+        background-color: rgba(22, 117, 134, 0.35);
+    }
+
+    #styleTop img {
+        width: 40%;
+        display:block;
+        margin: 0 auto;       
+    }
+
+#sectionStyle {
+    background-image: url("../images/background-compressor.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    animation-name: moving;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    width: 100%;
+    height: 100%;
+    color: rgb(255,255,255);
+    overflow: auto;
+}
+
+    #sectionStyle header {
+        width: 100%;
+        height: auto;
+        color: rgb(255,255,255);
+    }
+
+        #sectionStyle header h1 {
+            font-weight: 600;
+            font-size: 250%;
+            margin: 10px 0 0 0;
+            text-align: center;
+            text-shadow: 1px 1px rgb(0,0,0);
+        }
+
+    #sectionStyle h2 {
+        font-weight: 600;
+        font-size: 160%;
+        margin: 0 0 5px 5px;
+        color: rgb(255,255,255);
+        text-shadow: 1px 1px rgb(0,0,0);
+    }
+
+    #sectionStyle h3 {
+        font-size: 100%;
+        font-weight: 400;
+    }
+
+    #sectionStyle p {
+        font-size: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+/***************************/
+/* misc    	     		   */
+/***************************/
+#mapContent {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+#output {
+    display:none;
+    position:relative;
+    width: 100%;
+    height: 100%;
+    color: white;
+    overflow: hidden;
+}
+
+#styleFishing {
+    display:none;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+    #styleFishing #messageOutput {
+        position: absolute;
+        bottom: 21%;
+        left: 0;
+        width: 100%;
+        height: auto;
+        font-size: 250%;
+        line-height: 1.2em;
+        text-align: center;
+        text-shadow: 1px 1px rgb(0,0,0);
+    }
+
+        #styleFishing #messageOutput img {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: 2em;
+            height: auto;
+            background-color: rgb(22, 117, 134);
+            background-color: rgba(22, 117, 134, 0.7);
+            border: 0.1em solid rgb(116, 162, 195);
+            border: 0.1em solid rgba(116, 162, 195,0.5);
+            border-radius: 0.3em;
+            padding: 0.5em;
+            margin: 0.5em 0 0 0;
+        }
+
+    #styleFishing .movingLeft {
+        animation-name: moving_left;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-timing-function: linear;
+    }
+
+    #styleFishing .movingRight {
+        animation-name: moving_right;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-timing-function: linear;
+    }
+
+#fishControll {
+    position: fixed;
+    border-radius: 50%;
+    top: 20%;
+    left: 50%;
+    background-color: rgb(22, 117, 134);
+    background-color: rgba(22, 117, 134, 0.7);
+    width: 15em;
+    height: 15em;
+    overflow: hidden;
+    margin: 0 0 0 -7.5em;
+    border: 1em groove rgb(22, 117, 134);
+    border: 1em groove rgba(22, 117, 134, 0.7);
+}
+
+    #fishControll #distCal {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1em;
+        margin: -0.5em 0 0 0;
+        font-size: 400%;
+        line-height: 0.9em;
+        text-align: center;
+    }
+
+    #fishControll #distM {
+        position: absolute;
+        bottom: 27%;
+        left: 50%;
+        width: 10em;
+        height: auto;
+        margin: -2.5em 0 0 -5em;
+        font-size: 130%;
+        line-height: 1.2em;
+        text-align: center;
+    }
+
+    #contentOutput .center {
+        position: absolute;
+        top:50%;
+        text-align:center;
+        width: 100%;
+        height: 5em;
+        margin: -2.5em 0 0 0;
+        font-size: 300%;
+        line-height: 1.2em;
+    }
+
+    #contentOutput .centerBig {
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        width: 100%;
+        height: 2em;
+        margin: -1em 0 0 0;
+        font-size: 500%;
+        line-height: 1.2em;
+    }
+
+.lastChild:last-child {
+    margin-bottom: 95px;
+}
+
+/***************************/
+/* buttons      		   */
+/***************************/
+/* button 2 */
+.button2 {
+    color: rgb(255,255,255);
+    width: 10em;
+    height: 3em;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    background-color: rgb(75,148,106);
+    background-color: rgba(75,148,106,0.8);
+    margin: 0.5em auto;
+    text-align: center;
+    text-shadow: 1px 1px rgb(0,0,0);
+    box-shadow: 0 0 50px 10px rgb(0,0,0);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.75);
+}
+
+/* button */
+.button {
+    margin: 0 auto;
+    color: rgb(255,255,255);
+    width: 4em;
+    height: 4em;
+    padding: 0.3em;
+    border-radius: 50%;
+    border: 0.1em solid rgb(22, 117, 134);
+    border: 0.1em solid rgba(22, 117, 134, 0.3);
+    box-shadow: 0 0 50px 10px rgb(0,0,0);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.20);
+    overflow: hidden;
+    background: rgb(29,181,181);
+    background: rgba(22, 117, 134,0.5);
+}
+
+    .button img {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        padding: 0.5em;
+    }
+
+    .button:hover, .button2:hover, .boxButton:hover {
+        cursor: pointer;
+        background-color: rgb(231,122,0);
+        background-color: rgba(231,122,0,0.7);
+    }
+
+.closeButton {
+    display:none;
+    position: fixed;
+    left: 50%;
+    bottom: 7%;
+    width: 3em;
+    height: 3em;
+    background-color: rgb(255, 0, 0);
+    background-color: rgba(255, 0, 0, 0.7);
+    margin: -1.5em 0 0 -1.5em;
+}
+
+.leftButton {
+    position: fixed;
+    left: 50%;
+    bottom: 5%;
+    margin: 0 0 0 -9em;
+}
+
+.rightButton {
+    position: fixed;
+    right: 5%;
+    bottom: 3%;
+    width: 2em;
+    height: 2em;
+}
+
+.middleButton {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 7%;
+    width: 4em;
+    height: 4em;
+    margin: 0 0 0 -2em;
+    animation-duration: 5s;
+    animation-name: fadeIn;
+}
+
+#buttonText1, #buttonText2, #buttonText3, #buttonText4 {
+    position: fixed;
+    width: auto;
+    height: auto;
+    text-shadow: 1px 1px rgb(0,0,0);
+    text-align: center;
+    font-size: 80%;
+    font-weight: 600;
+    -moz-animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 3s;
+}
+
+#buttonText1 {
+    color: rgb(255,255,255);
+    left: 50%;
+    bottom: 0.5%;
+    margin: 0 0 0 -12.5em;
+    letter-spacing: 0.3em;
+}
+
+#buttonText3 {
+    display: none;
+    color: rgb(255,255,255);
+    left: 50%;
+    bottom: 3%;
+    margin: 0 0 0 -1.8em;
+    letter-spacing: 0.3em;
+    text-shadow: 1px 1px rgb(0,0,0);
+    animation-duration: 5s;
+    animation-name: fadeIn;
+}
+
+#buttonText4 {
+    color: rgb(231,122,0);
+    right: 50%;
+    bottom: 16%;
+    margin: 0 -11em 0 0;
+    transform: rotate(-20deg);
+    letter-spacing: 0.3em;
+}
+
+/***************************/
+/* message      		   */
+/***************************/
+#messageBox {
+    display: none;
+    position: fixed;
+    width: 250px;
+    height: auto;
+    padding: 10px;
+    margin: -50px 0 0 -125px;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: rgb(255,255,255);
+    border-radius: 0.3em;
+    background: rgb(5, 62, 62);
+    font-size: 100%;
+    z-index: 999;
+    box-shadow: 0 0 10px rgb(0,0,0);
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+/***************************/
+/* Grid					   */
+/***************************/
+#content {
+    display:none;
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+    #content:after {
+        content: "\0020";
+        display: block;
+        clear: both;
+        visibility: hidden;
+    }
+
+.wrap-col {
+    position: relative;
+    padding: 0.3em;
+    margin: 0.5em;
+    overflow: hidden;
+}
+
+/***************************/
+/* Grid-screen     		   */
+/***************************/
+@media only screen and (min-width: 100px) {
+    .col-1-12 {float: left; width: 8.33%;}
+    .col-2-12 {float: left; width: 16.66%;}
+    .col-3-12 {float: left; width: 25%;}
+    .col-4-12 {float: left; width: 33.33%;}
+    .col-5-12 {float: left; width: 41.66%;}
+    .col-6-12 {float: left; width: 50%;}
+    .col-7-12 {float: left; width: 58.33%;}
+    .col-8-12 {float: left; width: 66.66%;}
+    .col-9-12 {float: left; width: 75%;}
+    .col-10-12 {float: left; width: 83.33%;}
+    .col-11-12 {float: left; width: 91.66%;}
+    .col-full {float: left; width: 100%;}
+}
+
+/***************************/
+/* animation    		   */
+/***************************/
+@keyframes fadeIn {
+    0% {opacity: 0;}
+
+    100% {opacity: 1;}
+}
+
+@keyframes moving {
+    0% {background-position: center;}
+    10% {background-position: top right;}
+    20% {background-position: center;}
+    30% {background-position: bottom left;}
+    40% {background-position: center;}
+    50% {background-position: bottom right;}
+    60% {background-position: center;}
+    70% {background-position: top left;}
+    80% {background-position: center;}
+    90% {background-position: center;}
+    100% {background-position: center;}
+}
+
+@keyframes moving_left {
+    0% {left: 0;}
+    100% {left: -30%; opacity: 0}
+}
+
+@keyframes moving_right {
+    0% {left: 0;}
+    100% {left: 30%; opacity: 0}
+}

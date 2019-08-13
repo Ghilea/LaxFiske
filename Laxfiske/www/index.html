@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- security -->
+    <!--<meta http-equiv="Content-Security-Policy" content="
+          default-src 'self' 'unsafe-eval' 'unsafe-inline' http://89.160.115.26/ https://*.bing.com https://*.virtualearth.net data: gap: https://ssl.gstatic.com 'unsafe-eval';
+          style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.bing.com https://*.virtualearth.net;
+          font-src 'self' data: https://fonts.gstatic.com;
+          img-src 'self' data: blob: android-webview-video-poster: https://*.bing.com https://*.virtualearth.net;
+          media-src *">-->
+    <!-- misc -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <!-- icon -->
+    <link rel="icon" href="#">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|KoHo" rel="stylesheet">
+
+    <!-- title -->
+    <title>Laxfiske</title>
+
+</head>
+<body>
+
+    <!--<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
+
+    <!-- loading -->
+    <div id="loader">
+        <div class="waiting">Fiske</div>
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <p class="loaderText">Schh, fiskarna gömmer sig...</p>
+    </div>
+
+    <!-- content -->
+    <div id="content">
+
+        <!--                      -->
+        <!--    main              -->
+        <!--                      -->
+        <div id="sectionStyle">
+            <div id="styleTop">
+
+                <!-- menu -->
+                <div class="col-full">
+                    <div class="wrap-col">
+
+                        <!-- coupon -->
+                        <div class="col-3-12">
+                            <div class="wrap-col">
+                                <div id="handbookButton">
+                                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/book.svg" alt="">
+                                    <p>Handbok</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- coupon -->
+                        <div class="col-3-12">
+                            <div class="wrap-col">
+                                <div id="couponButton">
+                                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/star.svg" alt="">
+                                    <p>Rabatter</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- shop -->
+                        <div class="col-3-12">
+                            <div class="wrap-col">
+                                <div id="shopButton">
+                                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/bag.svg" alt="">
+                                    <p>Butik</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div class="col-3-12">
+                            <div class="wrap-col">
+                                <div id="mapButton">
+                                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/map.svg" alt="">
+                                    <p>Karta</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div><!-- end top -->
+            <!-- content output -->
+            <div id="contentOutput"></div>
+
+            <div id="styleFishing">
+                
+                <!-- message -->
+                <div id="messageOutput">Förbered ditt kast!<br /><img class='movingRight' src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src='images/svg/arrow_right.svg' /></div>
+
+                <!-- circle -->
+                <div id="fishControll">
+
+                    <!-- distance -->
+                    <div id="distCal"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/fishing_rod.svg" alt=""></div>
+
+                    <!-- meter -->
+                    <div id="distM"></div>
+                </div>
+
+            </div>
+
+            <!-- map -->
+            <div id="mapContent"></div>
+
+            <!--                      -->
+            <!--    poll              -->
+            <!--                      -->
+            <div id="poll">
+                <h1 id="pollTitle"></h1>
+
+                <div class="col-full">
+                    <div class="wrap-col">
+                        <div id="q1" class="buttonPoll"></div>
+                    </div>
+                </div>
+
+                <div class="col-full">
+                    <div class="wrap-col">
+                        <div id="q2" class="buttonPoll"></div>
+                    </div>
+                </div>
+
+                <div class="col-full">
+                    <div class="wrap-col">
+                        <div id="q3" class="buttonPoll"></div>
+                    </div>
+                </div>
+
+            </div><!-- end poll -->
+            <!--                      -->
+            <!--    coupons           -->
+            <!--                      -->
+            <div id="coupons">
+                <h1>Rabatter</h1>
+
+                <div class="col-full">
+                    <div class="wrap-col">
+
+                        <!-- box -->
+                        <div id="couponsData"></div>
+
+                    </div>
+                </div>
+
+            </div><!-- end coupons -->
+            <!--                      -->
+            <!--    menu              -->
+            <!--                      -->
+            <div id="buttonMenu">
+
+                <!-- middle button -->
+                <div id="fishingButton" class="middleButton button">
+                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/fishing_rod.svg" alt="">
+                </div>
+                <!-- middle button text -->
+                <div id="buttonText3">Fiska</div>
+
+            </div>
+
+            <!-- close -->
+            <div id="closeButton" class="closeButton button">
+                <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/close.svg" alt="">
+            </div>
+
+            <!-- setting button -->
+            <div id="settingButton" class="rightButton">
+                <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="images/svg/configuration2.svg" alt="">
+            </div>
+
+            <!--                      -->
+            <!--    messages          -->
+            <!--                      -->
+            <!-- message -->
+            <div id="messageBox"></div>
+
+        </div>
+
+    </div><!-- end section -->
+    <!-- Jquery -->
+    <script type="text/javascript" src="scripts/jquery-3.3.1.min.js" defer></script>
+
+    <!-- sound library -->
+    <script type="text/javascript" src="scripts/howler.min.js" defer></script>
+
+    <!-- map-->
+    <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?" defer></script>
+
+    <!-- device ready -->
+    <script type="text/javascript" src="scripts/index.js" defer></script>
+
+    <!-- cordova -->
+    <script type="text/javascript" src="cordova.js" defer></script>
+
+</body>
+</html>

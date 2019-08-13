@@ -1,0 +1,6 @@
+{
+  "name": "Laxfiske",
+  "dependencies": {
+    "jQuery": "3.4.0"
+  }
+}
